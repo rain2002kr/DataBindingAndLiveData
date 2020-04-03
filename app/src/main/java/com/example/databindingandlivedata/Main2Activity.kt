@@ -5,16 +5,16 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.ViewModelProvider
+import com.example.databindingandlivedata.databinding.ActivityMain2Binding
 import com.example.databindingandlivedata.databinding.ActivityMainBinding
 
-class MainActivity : AppCompatActivity() {
-
+class Main2Activity : AppCompatActivity() {
     lateinit var viewModelFactory : ViewModelProvider.AndroidViewModelFactory
     lateinit var mainViewModel :MainViewModel
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        setContentView(R.layout.activity_main2)
         getViewInstance()
         dataBinding()
 
@@ -26,19 +26,18 @@ class MainActivity : AppCompatActivity() {
     }
 
     fun dataBinding(){
-        DataBindingUtil.setContentView<ActivityMainBinding>(
-            this, R.layout.activity_main
+        DataBindingUtil.setContentView<ActivityMain2Binding>(
+            this, R.layout.activity_main2
         ).apply {
-            this.setLifecycleOwner (this@MainActivity)
+            this.setLifecycleOwner (this@Main2Activity)
             this.viewmodel = mainViewModel
-            this.mainActVity = this@MainActivity
+            this.acitivy = this@Main2Activity
         }
     }
 
     fun nextActivity(){
-        val intent = Intent(this, Main2Activity::class.java)
+        val intent = Intent(this, MainActivity::class.java)
         startActivity(intent)
     }
-
 
 }

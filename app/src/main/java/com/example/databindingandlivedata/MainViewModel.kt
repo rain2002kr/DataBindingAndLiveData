@@ -1,5 +1,7 @@
 package com.example.databindingandlivedata
 
+import android.content.Context
+import android.content.Intent
 import androidx.databinding.Bindable
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
@@ -14,5 +16,6 @@ class MainViewModel :ViewModel() {
     private val _displayedEditTextContent = MutableLiveData<String>()
     val displayedEditTextContent : LiveData<String>
         get() = _displayedEditTextContent
+
 
 }
