@@ -1,0 +1,2 @@
+rootProject.name='DataBindingAndLiveData'
+include ':app'
